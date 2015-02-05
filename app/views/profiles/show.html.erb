@@ -1,0 +1,19 @@
+<div class="container">
+	<h1><%= @user.email %></h1>
+
+	<% @user.tweets.each do |tweet| %>
+		 <div>
+	        <h3>
+	          <%= link_to tweet.status, tweet %><br>
+	          <small>Submited <%= time_ago_in_words(tweet.created_at) %></small>
+	        </h3>
+	      </div>
+	<% end %> 
+
+	<%=  link_to "Back", root_path %> 	
+</div>
+
+
+
+
+

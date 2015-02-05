@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @tweet.status %>
-</p>
+<div>
+	<h3><%= @tweet.status %></h3>
+</div>
 
-<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+<% if (current_user == @tweet.user) %>
+	<%= link_to 'Edit', edit_tweet_path(@tweet) %>  
+<% end %>
 <%= link_to 'Back', tweets_path %>
